@@ -29,10 +29,10 @@ while answ != 'Exit':
     word = 'VLP'
     if str(lang) == '1':
         with open('russian.dict', encoding='utf-8') as words:
-            word = ch(words.read().split())
+            word = ch(words.read().strip().split())
     elif str(lang) == '2':
         with open('english.dict') as words:
-            word = ch(words.read().split())
+            word = ch(words.read().strip().split())
     letts_not_in_word = []
     letts_in_word = []
     print(word)
