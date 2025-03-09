@@ -35,7 +35,6 @@ while answ != 'Exit':
             word = ch(words.read().strip().split())
     letts_not_in_word = []
     letts_in_word = []
-    print(word)
     length = len(word)
     emit = '_' * length
     success = False
