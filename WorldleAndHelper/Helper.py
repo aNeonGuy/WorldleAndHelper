@@ -9,7 +9,7 @@ elif str(lang) == '2':
         listwords = words.readlines()
 print('Okay, which length of word you have(tуpe number): / Хорошо, какая длина слова у вас(введите число):')
 length = int(input())
-listwords = filter(lambda word: len(word) == length, listwords)
+listwords = list(filter(lambda word: len(word) == length, listwords))
 answ = 'restart'
 while answ == 'restart':
     print('Now type letters you have in word(in one line, bettwen put space): / Теперь введите буквы, которые у вас есть в слове(в одну строку через пробел):')
