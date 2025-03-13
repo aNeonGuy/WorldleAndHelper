@@ -29,21 +29,22 @@ while answ != 'Exit':
     word = 'VLP'
     if str(lang) == '1':
         with open('russian.dict', encoding='utf-8') as words:
-            word = ch(words.read().strip().split())
+            word = ch(words.read().split())
     elif str(lang) == '2':
         with open('english.dict') as words:
-            word = ch(words.read().strip().split())
+            word = ch(words.read().split())
     letts_not_in_word = []
     letts_in_word = []
     length = len(word)
     emit = '_' * length
     success = False
     print('So, thats where game starts! / Здесь начинается игра!')
-    print('Letters you have: / Буквы, которые у вас есть')
-    print(emit)
+    print('Your mask of word: / Маска вашего слова:')
+    print(f'{emit} (word leght {length} / длина слова {length})')
     print('Type guess(word): / Введите догадку(слово):')
     guess = input()
     for attempts in range(6):
+        print(f'You have {attempts} attempts/ У тебя {attempts} попыток')
         for index in range(length):
             if guess[index] == word[index]:
                 emit_list = list(emit)
@@ -55,7 +56,7 @@ while answ != 'Exit':
                 letts_in_word.remove(guess[index])
             if guess[index] not in word:
                 letts_not_in_word.append(guess[index])
-        if emit == word:
+        if emit == word.strip():
             success = True
             break
         print('letters you have: / Буквы, которые у вас есть')
