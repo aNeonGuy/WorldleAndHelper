@@ -11,7 +11,7 @@ while answ == 'restart':
             listwords = words.readlines()
     print('Okay, which length of word you have(tуpe number): / Хорошо, какая длина слова у вас(введите число):')
     length = int(input())
-    listwords = list(filter(lambda word: len(word) == length, listwords))
+    listwords = list(filter(lambda word: len(word.strip()) == length, listwords))
     print('Now type letters you have in word(in one line, bettwen put space): / Теперь введите буквы, которые у вас есть в слове(в одну строку через пробел):')
     listgletts = input().split()
     for word in listwords:
@@ -25,7 +25,7 @@ while answ == 'restart':
     print('Now give me mask of the world(__f_d for example): / Теперь дайте мне маску мира (__в_е например):')
     mask = input()
     bestwords = []
-    for word in wordlist:
+    for word in listwords:
         check = True
         word = word.strip()
         for i in range(len(word)):
@@ -38,7 +38,7 @@ while answ == 'restart':
     print(*bestwords)
     print('Do you have any new info? If yes, type "restart" / У вас есть какая-нибудь новая информация? Если да, введите "restart"')
     print('else anything you want: / иначе все, что захотите:')
-answ = input()
+    answ = input()
 print('Thank you for using me! / Спасибо за использование!')
 print('Bye! It was the "Helper"!. / Пока! Это был "Helper".')
 print('')
